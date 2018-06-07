@@ -1,0 +1,86 @@
+#header {
+	background-color: #C44DFF;
+	color: #FFF;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+}
+
+#header b {
+	font-family: helvetica;
+	
+	display: inline-block;
+	
+	height: 100%;
+}
+
+/*
+	Header block for desktop devices (conventional header)
+*/
+@media (min-width: 768px) {
+	#header {
+		height: 50px;
+	}
+
+	#header b {
+		line-height: 50px;
+		margin-left: 40px;
+	}
+
+	.header-buttons {
+		display: flex;
+		float: right;
+	}
+
+	.header-buttons a {
+		display: inline-block;
+		
+		color: #FFF;
+		text-decoration: none;
+		font-family: helvetica;
+		
+		padding-right: 30px;
+		padding-left: 30px;
+		line-height: 50px;
+	}
+
+	.header-buttons a:hover {
+		background-color: #AA00FF;
+	}
+}
+
+/*
+	Header block for small screens (hamburger menu)
+*/
+@media (max-width: 767px) {
+	#header {
+		height: 30px;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	
+	#header b {
+		display: inline-block;
+		
+		line-height: 30px;
+		text-align: center;
+		
+		flex-grow: 1;
+	}
+	
+	.header-buttons {
+		width: 30px;
+		height: 100%;
+		flex-grow: 0;
+	}
+	
+	.header-button-content {
+		position: absolute;
+		z-index: 1;
+		
+		display: none;
+	}
+}
